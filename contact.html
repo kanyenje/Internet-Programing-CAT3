@@ -14,17 +14,48 @@
         nav ul li a:hover { background:#00509e; }
         nav ul li a.active { background:#ffcc00; color:#003366; }
         .container { max-width:800px; margin:2rem auto; padding:0 2rem; flex:1; }
-        h1 { color:#003366; margin-bottom:1rem; text-align:center; }
+        h1 { color:#003366; margin-bottom:0.5rem; text-align:center; }
+
+        /* --- New banner image style --- */
+        .banner-img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
         .contact-form { background:white; padding:2rem; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
         .contact-form label { display:block; font-weight:bold; margin-top:1rem; }
         .contact-form input, .contact-form textarea { width:100%; padding:0.8rem; margin-top:0.3rem; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
         .contact-form textarea { height:150px; resize:vertical; }
         .contact-form button { background:#ffcc00; color:#003366; border:none; padding:0.8rem 2rem; font-size:1.1rem; font-weight:bold; border-radius:30px; cursor:pointer; margin-top:1.5rem; transition:background 0.3s; }
         .contact-form button:hover { background:#e6b800; }
-        .contact-info { text-align:center; margin-top:2rem; }
+
+        .contact-info { 
+            text-align:center; 
+            margin-top:2rem; 
+            background:white; 
+            padding:1.5rem; 
+            border-radius:10px; 
+            box-shadow:0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
         .contact-info p { margin:0.3rem 0; }
+
         footer { background:#003366; color:white; text-align:center; padding:1rem 0; margin-top:2rem; }
-        @media (max-width:600px) { nav { flex-direction:column; gap:0.5rem; } nav ul { justify-content:center; } }
+        @media (max-width:600px) { nav { flex-direction:column; gap:0.5rem; } nav ul { justify-content:center; } .banner-img { max-height:120px; } }
     </style>
 </head>
 <body>
@@ -42,6 +73,13 @@
 
     <div class="container">
         <h1>Get In Touch</h1>
+
+        <!-- NEW: Banner image added right below the heading -->
+        <img 
+            class="banner-img" 
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=200&fit=crop&crop=center" 
+            alt="School office reception area" 
+        />
 
         <div class="contact-form">
             <form name="contactForm" onsubmit="return validateForm()">
@@ -62,7 +100,12 @@
             <p id="formFeedback" style="margin-top:1rem; font-weight:bold; color:#003366;"></p>
         </div>
 
+        <!-- NEW: Added a small icon image above the contact details -->
         <div class="contact-info">
+            <img 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=120&h=120&fit=crop&crop=center" 
+                alt="Contact icon" 
+            />
             <p>📍 P.O. Box 123, Nairobi, Kenya</p>
             <p>📞 +254 712 345 678</p>
             <p>✉️ <a href="mailto:info@zetech.ac.ke">info@zetech.ac.ke</a></p>
@@ -70,7 +113,7 @@
     </div>
 
     <footer>
-        &copy; 2026 [Your Name] | [Your Reg. No] | All Rights Reserved.
+        &copy; 2026 Bonface Maina.
     </footer>
 
     <script>
