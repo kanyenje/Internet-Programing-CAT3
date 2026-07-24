@@ -14,16 +14,31 @@
         nav ul li a:hover { background:#00509e; }
         nav ul li a.active { background:#ffcc00; color:#003366; }
         .container { max-width:1100px; margin:2rem auto; padding:0 2rem; flex:1; }
-        h1 { color:#003366; margin-bottom:1rem; }
+        h1 { color:#003366; margin-bottom:0.5rem; }
+
+        /* --- New banner image style --- */
+        .banner-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
         table { width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:1rem 0; }
         th { background:#003366; color:white; padding:0.8rem; text-align:left; }
         td { padding:0.8rem; border-bottom:1px solid #ddd; }
         tr:hover { background:#f1f8ff; }
+
         .course-list { background:white; padding:1.5rem; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin-top:1.5rem; }
-        .course-list h2 { color:#003366; }
+        .course-list h2 { color:#003366; display:flex; align-items:center; gap:0.8rem; }
+        .course-list h2 img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
         .course-list ul { margin:0.5rem 0 0 2rem; }
+
         footer { background:#003366; color:white; text-align:center; padding:1rem 0; margin-top:2rem; }
-        @media (max-width:600px) { nav { flex-direction:column; gap:0.5rem; } nav ul { justify-content:center; } table { font-size:0.9rem; } }
+
+        @media (max-width:600px) { nav { flex-direction:column; gap:0.5rem; } nav ul { justify-content:center; } table { font-size:0.9rem; } .banner-img { max-height:150px; } }
     </style>
 </head>
 <body>
@@ -42,6 +57,13 @@
     <div class="container">
         <h1>Our Academic Programs</h1>
 
+        <!-- NEW: Banner image added right below the heading -->
+        <img 
+            class="banner-img" 
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1100&h=250&fit=crop&crop=center" 
+            alt="Students studying" 
+        />
+
         <!-- Table of Courses -->
         <table>
             <thead>
@@ -54,25 +76,25 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Computer Science</td>
+                    <td>💻 Computer Science</td>
                     <td>4 Years</td>
                     <td>120,000</td>
                     <td>Math, English, Physics</td>
                 </tr>
                 <tr>
-                    <td>Business Admin</td>
+                    <td>📊 Business Admin</td>
                     <td>3 Years</td>
                     <td>90,000</td>
                     <td>English, Math, Business</td>
                 </tr>
                 <tr>
-                    <td>Engineering</td>
+                    <td>⚙️ Engineering</td>
                     <td>5 Years</td>
                     <td>150,000</td>
                     <td>Math, Physics, Chemistry</td>
                 </tr>
                 <tr>
-                    <td>Graphic Design</td>
+                    <td>🎨 Graphic Design</td>
                     <td>2 Years</td>
                     <td>70,000</td>
                     <td>Art, English</td>
@@ -82,7 +104,14 @@
 
         <!-- List of Subjects for a specific course -->
         <div class="course-list">
-            <h2>📖 Computer Science - Core Modules</h2>
+            <h2>
+                <!-- NEW: Small Unsplash image as an icon next to the heading -->
+                <img 
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=80&h=80&fit=crop&crop=center" 
+                    alt="Computer Science icon" 
+                />
+                Computer Science - Core Modules
+            </h2>
             <ul>
                 <li>Programming 101 (Python)</li>
                 <li>Database Systems</li>
