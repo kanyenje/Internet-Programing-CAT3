@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - School Portal</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: Arial, sans-serif; background:#f4f9ff; color:#333; display:flex; flex-direction:column; min-height:100vh; }
+        nav { background:#003366; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+        nav .logo { color:white; font-size:1.5rem; font-weight:bold; }
+        nav ul { list-style:none; display:flex; gap:1.5rem; flex-wrap:wrap; }
+        nav ul li a { color:white; text-decoration:none; font-weight:bold; padding:0.5rem 1rem; border-radius:5px; transition:background 0.3s; }
+        nav ul li a:hover { background:#00509e; }
+        nav ul li a.active { background:#ffcc00; color:#003366; }
+        .container { max-width:1100px; margin:2rem auto; padding:0 2rem; flex:1; }
+        h1 { color:#003366; margin-bottom:1rem; }
+        .about-section { background:white; padding:2rem; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin-bottom:2rem; }
+        .about-section h2 { color:#003366; margin-top:1rem; }
+        .about-section ul { margin:1rem 0 0 2rem; }
+        footer { background:#003366; color:white; text-align:center; padding:1rem 0; margin-top:2rem; }
+        @media (max-width:600px) { nav { flex-direction:column; gap:0.5rem; } nav ul { justify-content:center; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">🏫 SchoolPortal</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>About Our School</h1>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>To provide quality education that empowers students to become leaders and innovators in their communities.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Vision</h2>
+            <p>To be a center of excellence in education, producing well-rounded individuals ready for the global stage.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Core Values</h2>
+            <ul>
+                <li><strong>Integrity</strong> – Doing the right thing always.</li>
+                <li><strong>Excellence</strong> – Striving for the best in all we do.</li>
+                <li><strong>Teamwork</strong> – Working together to achieve more.</li>
+                <li><strong>Innovation</strong> – Embracing new ideas and technology.</li>
+            </ul>
+        </div>
+
+        <div class="about-section">
+            <h2>History</h2>
+            <p>Founded in 2005, our school has grown from a small classroom to a vibrant institution with over 500 students and 50 staff members.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 [Your Name] | [Your Reg. No] | All Rights Reserved.
+    </footer>
+
+</body>
+</html>
