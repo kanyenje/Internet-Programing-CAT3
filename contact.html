@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - School Portal</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: Arial, sans-serif; background:#f4f9ff; color:#333; display:flex; flex-direction:column; min-height:100vh; }
+        nav { background:#003366; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+        nav .logo { color:white; font-size:1.5rem; font-weight:bold; }
+        nav ul { list-style:none; display:flex; gap:1.5rem; flex-wrap:wrap; }
+        nav ul li a { color:white; text-decoration:none; font-weight:bold; padding:0.5rem 1rem; border-radius:5px; transition:background 0.3s; }
+        nav ul li a:hover { background:#00509e; }
+        nav ul li a.active { background:#ffcc00; color:#003366; }
+        .container { max-width:800px; margin:2rem auto; padding:0 2rem; flex:1; }
+        h1 { color:#003366; margin-bottom:1rem; text-align:center; }
+        .contact-form { background:white; padding:2rem; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+        .contact-form label { display:block; font-weight:bold; margin-top:1rem; }
+        .contact-form input, .contact-form textarea { width:100%; padding:0.8rem; margin-top:0.3rem; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
+        .contact-form textarea { height:150px; resize:vertical; }
+        .contact-form button { background:#ffcc00; color:#003366; border:none; padding:0.8rem 2rem; font-size:1.1rem; font-weight:bold; border-radius:30px; cursor:pointer; margin-top:1.5rem; transition:background 0.3s; }
+        .contact-form button:hover { background:#e6b800; }
+        .contact-info { text-align:center; margin-top:2rem; }
+        .contact-info p { margin:0.3rem 0; }
+        footer { background:#003366; color:white; text-align:center; padding:1rem 0; margin-top:2rem; }
+        @media (max-width:600px) { nav { flex-direction:column; gap:0.5rem; } nav ul { justify-content:center; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">🏫 SchoolPortal</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Get In Touch</h1>
+
+        <div class="contact-form">
+            <form name="contactForm" onsubmit="return validateForm()">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name">
+
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject of your message">
+
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="formFeedback" style="margin-top:1rem; font-weight:bold; color:#003366;"></p>
+        </div>
+
+        <div class="contact-info">
+            <p>📍 P.O. Box 123, Nairobi, Kenya</p>
+            <p>📞 +254 712 345 678</p>
+            <p>✉️ <a href="mailto:info@schoolportal.com">info@schoolportal.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 [Your Name] | [Your Reg. No] | All Rights Reserved.
+    </footer>
+
+    <script>
+        function validateForm() {
+            let name = document.forms["contactForm"]["name"].value.trim();
+            let email = document.forms["contactForm"]["email"].value.trim();
+            let message = document.forms["contactForm"]["message"].value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                document.getElementById("formFeedback").innerHTML = "❌ Please fill in all required fields (*).";
+                document.getElementById("formFeedback").style.color = "red";
+                return false;
+            } else {
+                document.getElementById("formFeedback").innerHTML = "✅ Your message has been sent successfully!";
+                document.getElementById("formFeedback").style.color = "green";
+                // In a real scenario, you would submit the form here.
+                // For demonstration, we prevent actual submission.
+                return false; // Prevents page refresh for demo
+            }
+        }
+    </script>
+
+</body>
+</html>
